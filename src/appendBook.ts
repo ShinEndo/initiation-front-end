@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import createBookReview from "./createBookReview"
+import {createBookReview} from "./createBookReview"
 
 type Book = {
     id: number;
@@ -17,7 +17,7 @@ type Review = {
     like: number;
 };
 
-export default function appendBook(book: Book) {
+function appendBook(book: Book) {
     $('#js-book-list').append($(
       '<li class="book-list__item">' +
         '<div class="book-list__item__inner">' +
@@ -44,4 +44,6 @@ export default function appendBook(book: Book) {
         '</div>' +
       '</li>'
     ))
-  }
+}
+
+export {Book, Review, appendBook}
